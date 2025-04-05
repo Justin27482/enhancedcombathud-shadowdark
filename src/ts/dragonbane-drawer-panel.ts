@@ -8,7 +8,7 @@ type DrawerCategory = {
 
 const attributesList = ["STR", "CON", "AGL", "INT", "WIL", "CHA"];
 
-export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
+export default class shadowdarkDrawerPanel extends ARGON.DRAWER.DrawerPanel {
   constructor(...args) {
     super(...args);
 
@@ -37,15 +37,15 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
   }
 
   get classes() {
-    return ["ability-menu", "dragonbane-ability-menu"];
+    return ["ability-menu", "shadowdark-ability-menu"];
   }
 
   get title() {
     return this.actor.isCharacter
       ? game.i18n.localize(
-          "enhancedcombathud-dragonbane.drawer.attributes-and-skills",
+          "enhancedcombathud-shadowdark.drawer.attributes-and-skills",
         )
-      : game.i18n.localize("enhancedcombathud-dragonbane.drawer.skills");
+      : game.i18n.localize("enhancedcombathud-shadowdark.drawer.skills");
   }
 
   get categories() {
@@ -60,9 +60,9 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
           new ARGON.DRAWER.DrawerButton([
             {
               label: game.i18n.localize(
-                "enhancedcombathud-dragonbane.drawer.attributes." + a,
+                "enhancedcombathud-shadowdark.drawer.attributes." + a,
               ),
-              onClick: () => game.dragonbane.rollAttribute(this.actor, a),
+              onClick: () => game.shadowdark.rollAttribute(this.actor, a),
             },
             {
               label: `<span class="attribute-condition ${a.toLowerCase()} ${this.actor.hasCondition(a.toLowerCase()) ? "on" : ""}">${game.i18n.localize("DoD.conditions." + a.toLowerCase())}</span>`,
@@ -74,7 +74,7 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
             },
             {
               label: this.actor.system.attributes[a.toLowerCase()]?.value,
-              onClick: () => game.dragonbane.rollAttribute(this.actor, a),
+              onClick: () => game.shadowdark.rollAttribute(this.actor, a),
             },
           ]),
       );
@@ -83,7 +83,7 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
         captions: [
           {
             label: game.i18n.localize(
-              "enhancedcombathud-dragonbane.drawer.attribute",
+              "enhancedcombathud-shadowdark.drawer.attribute",
             ),
             align: "left",
           },
@@ -98,22 +98,22 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
     const skillGroups = [
       {
         group: "core",
-        label: game.i18n.localize("enhancedcombathud-dragonbane.drawer.skills"),
+        label: game.i18n.localize("enhancedcombathud-shadowdark.drawer.skills"),
       },
       {
         group: "magic",
-        label: game.i18n.localize("enhancedcombathud-dragonbane.drawer.magic"),
+        label: game.i18n.localize("enhancedcombathud-shadowdark.drawer.magic"),
       },
       {
         group: "secondary",
         label: game.i18n.localize(
-          "enhancedcombathud-dragonbane.drawer.secondary-skills",
+          "enhancedcombathud-shadowdark.drawer.secondary-skills",
         ),
       },
       {
         group: "weapon",
         label: game.i18n.localize(
-          "enhancedcombathud-dragonbane.drawer.weapons",
+          "enhancedcombathud-shadowdark.drawer.weapons",
         ),
       },
     ];
@@ -127,11 +127,11 @@ export default class DragonbaneDrawerPanel extends ARGON.DRAWER.DrawerPanel {
             new ARGON.DRAWER.DrawerButton([
               {
                 label: skill.name,
-                onClick: () => game.dragonbane.rollItem(skill.name, "skill"),
+                onClick: () => game.shadowdark.rollItem(skill.name, "skill"),
               },
               {
                 label: this.actor.getSkill(skill.name)?.system.value,
-                onClick: () => game.dragonbane.rollItem(skill.name, "skill"),
+                onClick: () => game.shadowdark.rollItem(skill.name, "skill"),
               },
             ]),
         );

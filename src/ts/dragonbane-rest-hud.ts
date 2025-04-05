@@ -1,8 +1,8 @@
 const ARGON = CONFIG.ARGON;
 
-export default class DragonbaneRestHud extends ARGON.ButtonHud {
+export default class shadowdarkRestHud extends ARGON.ButtonHud {
   get classes() {
-    return ["movement-hud", "dragonbane-movement-hud"];
+    return ["movement-hud", "shadowdark-movement-hud"];
   }
 
   get visible() {
@@ -13,7 +13,7 @@ export default class DragonbaneRestHud extends ARGON.ButtonHud {
     return [
       {
         label: game.i18n.localize(
-          "enhancedcombathud-dragonbane.buttons.stretch-rest",
+          "enhancedcombathud-shadowdark.buttons.stretch-rest",
         ),
         // have to account for _not_ being able to rest for a stretch
         onClick: (event) =>
@@ -23,7 +23,7 @@ export default class DragonbaneRestHud extends ARGON.ButtonHud {
       },
       {
         label: game.i18n.localize(
-          "enhancedcombathud-dragonbane.buttons.shift-rest",
+          "enhancedcombathud-shadowdark.buttons.shift-rest",
         ),
         onClick: (event) => this.actor.sheet._onRestShift(event),
         icon: "fas fa-bed",

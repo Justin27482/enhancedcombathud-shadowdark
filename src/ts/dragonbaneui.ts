@@ -1,25 +1,25 @@
-import DragonbanePortraitPanel from "./dragonbane-portrait-panel";
-import DragonbaneDrawerPanel from "./dragonbane-drawer-panel";
-import DragonbaneMovementHud from "./dragonbane-movement-hud";
-import DragonbaneWeaponSets from "./dragonbane-weapon-sets";
-import DragonbaneActionsPanel from "./dragonbane-actions-panel";
-import DragonbaneDefensePanel from "./dragonbane-defense-panel";
-import DragonbaneRestHud from "./dragonbane-rest-hud";
-import DragonbaneDyingPanel from "./dragonbane-dying-panel";
+import shadowdarkPortraitPanel from "./shadowdark-portrait-panel";
+import shadowdarkDrawerPanel from "./shadowdark-drawer-panel";
+import shadowdarkMovementHud from "./shadowdark-movement-hud";
+import shadowdarkWeaponSets from "./shadowdark-weapon-sets";
+import shadowdarkActionsPanel from "./shadowdark-actions-panel";
+import shadowdarkDefensePanel from "./shadowdark-defense-panel";
+import shadowdarkRestHud from "./shadowdark-rest-hud";
+import shadowdarkDyingPanel from "./shadowdark-dying-panel";
 
-export function setupDragonbaneHud(CoreHUD): void {
+export function setupshadowdarkHud(CoreHUD): void {
   const ARGON = CoreHUD.ARGON;
 
-  CoreHUD.definePortraitPanel(DragonbanePortraitPanel);
-  CoreHUD.defineDrawerPanel(DragonbaneDrawerPanel);
+  CoreHUD.definePortraitPanel(shadowdarkPortraitPanel);
+  CoreHUD.defineDrawerPanel(shadowdarkDrawerPanel);
   CoreHUD.defineMainPanels([
-    DragonbaneActionsPanel,
-    DragonbaneDyingPanel,
-    DragonbaneDefensePanel,
+    shadowdarkActionsPanel,
+    shadowdarkDyingPanel,
+    shadowdarkDefensePanel,
     ARGON.PREFAB.PassTurnPanel,
   ]);
-  CoreHUD.defineMovementHud(DragonbaneMovementHud);
-  CoreHUD.defineWeaponSets(DragonbaneWeaponSets);
-  CoreHUD.defineButtonHud(DragonbaneRestHud);
+  CoreHUD.defineMovementHud(shadowdarkMovementHud);
+  CoreHUD.defineWeaponSets(shadowdarkWeaponSets);
+  CoreHUD.defineButtonHud(shadowdarkRestHud);
   CoreHUD.defineSupportedActorTypes(["character", "npc", "monster"]);
 }

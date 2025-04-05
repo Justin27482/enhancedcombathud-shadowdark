@@ -1,6 +1,6 @@
 {
-  "id": "enhancedcombathud-dragonbane",
-  "title": "Argon - Combat HUD (DRAGONBANE)",
+  "id": "enhancedcombathud-shadowdark",
+  "title": "Argon - Combat HUD (shadowdark)",
   "description": "",
   "version": "0.10.2",
 
@@ -21,7 +21,7 @@
   "relationships": {
     "systems": [
       {
-        "id": "dragonbane",
+        "id": "shadowdark",
         "type": "system",
         "compatibility": {}
       }
@@ -48,7 +48,7 @@
       "path": "languages/sv.json"
     }
   ],
-  "url": "https://github.com/rayners/enhancedcombathud-dragonbane",
+  "url": "https://github.com/rayners/enhancedcombathud-shadowdark",
   "manifest": "MANIFEST",
   "download": "DOWNLOAD",
   "license": "LICENSE",

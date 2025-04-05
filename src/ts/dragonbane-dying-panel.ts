@@ -2,25 +2,25 @@ import { id as MODULE_NAME } from "../module.json";
 
 const ARGON = CONFIG.ARGON;
 
-class DragonbaneRallySelfButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkRallySelfButton extends ARGON.MAIN.BUTTONS.ActionButton {
   get icon() {
-    return "modules/enhancedcombathud-dragonbane/icons/bugle-call.svg";
+    return "modules/enhancedcombathud-shadowdark/icons/bugle-call.svg";
   }
 
   get label() {
     return game.i18n.localize(
-      "enhancedcombathud-dragonbane.actions.rally-self",
+      "enhancedcombathud-shadowdark.actions.rally-self",
     );
   }
 
   async _onLeftClick(event) {
     // Have to go through the character sheet for now
-    // game.dragonbane.rollAttribute(this.actor, 'WIL', { manualBanes: 1 });
+    // game.shadowdark.rollAttribute(this.actor, 'WIL', { manualBanes: 1 });
 
     // little hacky, but we need to change the behavior based on the version of the system
     // since the newer version of this code won't prompt the user for a bane
     if (foundry.utils.isNewerVersion((game.system as any).version, "1.8.1")) {
-      game.dragonbane.rollAttribute(this.actor, "WIL", {
+      game.shadowdark.rollAttribute(this.actor, "WIL", {
         banes: [
           {
             source: game.i18n.localize(`${MODULE_NAME}.actions.rally-self`),
@@ -45,13 +45,13 @@ class DragonbaneRallySelfButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 }
 
-export default class DragonbaneDyingActionsPanel extends ARGON.MAIN
+export default class shadowdarkDyingActionsPanel extends ARGON.MAIN
   .ActionPanel {
   get classes() {
-    return ["actions-container", "dragonbane-actions-container"];
+    return ["actions-container", "shadowdark-actions-container"];
   }
   get label() {
-    return game.i18n.localize("enhancedcombathud-dragonbane.panels.dying");
+    return game.i18n.localize("enhancedcombathud-shadowdark.panels.dying");
   }
 
   get maxActions() {
@@ -63,7 +63,7 @@ export default class DragonbaneDyingActionsPanel extends ARGON.MAIN
   }
 
   async _getButtons() {
-    return [new DragonbaneRallySelfButton()];
+    return [new shadowdarkRallySelfButton()];
   }
 
   // hacky, but it hides/shows it when the death state changes

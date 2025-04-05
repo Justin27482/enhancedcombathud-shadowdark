@@ -1,6 +1,6 @@
 const ARGON = CONFIG.ARGON;
 
-export default class DragonbaneWeaponSets extends ARGON.WeaponSets {
+export default class shadowdarkWeaponSets extends ARGON.WeaponSets {
   // We aren't using it... yet
   async getDefaultSets() {
     return {};

@@ -4,9 +4,9 @@ const ARGON = CONFIG.ARGON;
 
 const spellSort = (a, b) => a.name.localeCompare(b.name);
 
-export class DragonbaneSpellsButton extends ARGON.MAIN.BUTTONS
+export class shadowdarkSpellsButton extends ARGON.MAIN.BUTTONS
   .ButtonPanelButton {
-  spells: Array<DragonbaneItem>;
+  spells: Array<shadowdarkItem>;
 
   constructor(spells) {
     super(spells);
@@ -14,11 +14,11 @@ export class DragonbaneSpellsButton extends ARGON.MAIN.BUTTONS
   }
 
   get classes() {
-    return ["action-element", "ech-blur", "dragonbane-action-element"];
+    return ["action-element", "ech-blur", "shadowdark-action-element"];
   }
 
   get label() {
-    return game.i18n.localize("enhancedcombathud-dragonbane.buttons.spells");
+    return game.i18n.localize("enhancedcombathud-shadowdark.buttons.spells");
   }
   get icon() {
     return "modules/enhancedcombathud/icons/svg/spell-book.svg";
@@ -41,12 +41,12 @@ export class DragonbaneSpellsButton extends ARGON.MAIN.BUTTONS
           (rank) =>
             new ARGON.MAIN.BUTTON_PANELS.ACCORDION.AccordionPanelCategory({
               label: game.i18n.format(
-                "enhancedcombathud-dragonbane.drawer.spells.rank",
+                "enhancedcombathud-shadowdark.drawer.spells.rank",
                 { rank },
               ),
               buttons: spellsByRank[rank]
                 .sort(spellSort)
-                .map((item) => new DragonbaneSpellButton({ item })),
+                .map((item) => new shadowdarkSpellButton({ item })),
               uses: () => this.actor.system.willPoints,
             }),
         );
@@ -58,17 +58,17 @@ export class DragonbaneSpellsButton extends ARGON.MAIN.BUTTONS
       return new ARGON.MAIN.BUTTON_PANELS.ButtonPanel({
         buttons: this.spells
           .sort(spellSort)
-          .map((item) => new DragonbaneSpellButton({ id: this.id, item })),
+          .map((item) => new shadowdarkSpellButton({ id: this.id, item })),
       });
     }
   }
 }
 
-class DragonbaneSpellButton extends ARGON.MAIN.BUTTONS.ItemButton {
+class shadowdarkSpellButton extends ARGON.MAIN.BUTTONS.ItemButton {
   get classes() {
     return [
       "feature-element",
-      "dragonbane-feature-element",
+      "shadowdark-feature-element",
       "sheet-table-data",
     ];
   }
@@ -120,7 +120,7 @@ class DragonbaneSpellButton extends ARGON.MAIN.BUTTONS.ItemButton {
 
   async _onLeftClick(event) {
     // You'd think this would be enough:
-    // game.dragonbane.rollItem(this.item.name, this.item.type);
+    // game.shadowdark.rollItem(this.item.name, this.item.type);
 
     // But it doesn't account for:
     // - Magic tricks

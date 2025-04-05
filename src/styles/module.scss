@@ -1,14 +1,14 @@
-.system-dragonbane {
+.system-shadowdark {
   .ech-tooltip {
     .ech-tooltip-body {
-      background: url("../../../systems/dragonbane/art/ui/dialog-bg.webp")
+      background: url("../../../systems/shadowdark/art/ui/dialog-bg.webp")
         repeat;
       background-position-x: center;
       font-family: QTFrizQuad;
 
       color: black;
       .ech-tooltip-subtitle {
-        background: url("../../../systems/dragonbane/art/ui/button-bg.webp")
+        background: url("../../../systems/shadowdark/art/ui/button-bg.webp")
           repeat;
         color: #f5f5f5;
       }
@@ -16,8 +16,8 @@
   }
 
   .extended-combat-hud {
-    .dragonbane-portrait-hud {
-      background: url("../../../systems/dragonbane/art/ui/dialog-bg.webp")
+    .shadowdark-portrait-hud {
+      background: url("../../../systems/shadowdark/art/ui/dialog-bg.webp")
         repeat;
       background-position-x: center;
 
@@ -27,9 +27,9 @@
       }
     }
 
-    .dragonbane-ability-menu {
+    .shadowdark-ability-menu {
       &:before {
-        background: url("../../../systems/dragonbane/art/ui/dialog-bg.webp")
+        background: url("../../../systems/shadowdark/art/ui/dialog-bg.webp")
           repeat;
         background-position-x: center;
       }
@@ -39,7 +39,7 @@
         color: black;
         font-size: 110%;
         &.ability-title {
-          background: url("../../../systems/dragonbane/art/ui/button-bg.webp")
+          background: url("../../../systems/shadowdark/art/ui/button-bg.webp")
             repeat;
           color: #f5f5f5;
         }
@@ -52,8 +52,8 @@
       }
     }
 
-    .movement-hud.dragonbane-movement-hud {
-      background: url("../../../systems/dragonbane/art/ui/dialog-bg.webp")
+    .movement-hud.shadowdark-movement-hud {
+      background: url("../../../systems/shadowdark/art/ui/dialog-bg.webp")
         repeat;
       background-position-x: center;
       font-family: QTFrizQuad;
@@ -63,7 +63,7 @@
         color: black;
         background: none;
       }
-      &.dragonbane-monster {
+      &.shadowdark-monster {
         .movement-space {
           height: 18px;
           width: 18px;
@@ -73,9 +73,9 @@
     }
 
     .action-hud {
-      .actions-container.dragonbane-actions-container {
+      .actions-container.shadowdark-actions-container {
         &:before {
-          background: url("../../../systems/dragonbane/art/ui/button-bg.webp")
+          background: url("../../../systems/shadowdark/art/ui/button-bg.webp")
             repeat;
           color: #f5f5f5;
         }
@@ -90,50 +90,50 @@
 
         .feature-accordion-title,
         .feature-spell-slots {
-          background: url("../../../systems/dragonbane/art/ui/button-bg.webp")
+          background: url("../../../systems/shadowdark/art/ui/button-bg.webp")
             repeat;
           color: #f5f5f5;
         }
       }
     }
 
-    .dragonbane-movement-hud {
-      .dragonbane-movement {
-        background: url("../../../systems/dragonbane/art/ui/button-bg.webp")
+    .shadowdark-movement-hud {
+      .shadowdark-movement {
+        background: url("../../../systems/shadowdark/art/ui/button-bg.webp")
           repeat;
       }
     }
   }
 }
 
-// .system-dragonbane .features-container.dragonbane-features-container {
+// .system-shadowdark .features-container.shadowdark-features-container {
 //     z-index: 101;
 // }
 
-// .system-dragonbane .portrait-hud.dragonbane-portrait-hud {
-//     background: url(../../../systems/dragonbane/art/ui/dialog-bg.webp) repeat;
+// .system-shadowdark .portrait-hud.shadowdark-portrait-hud {
+//     background: url(../../../systems/shadowdark/art/ui/dialog-bg.webp) repeat;
 //     background-position-x: center;
 //     font-family: QTFrizQuad;
 //     //font-family: Caveat;
 //     color: black;
 // }
 
-// .system-dragonbane .portrait-hud.dragonbane-portrait-hud .player-details {
-//     background: url(../../../systems/dragonbane/art/ui/button-bg.webp);
+// .system-shadowdark .portrait-hud.shadowdark-portrait-hud .player-details {
+//     background: url(../../../systems/shadowdark/art/ui/button-bg.webp);
 //     background-repeat: repeat;
 //     background-size: contain;
 //     background-clip: border-box;
 // }
 
-// .system-dragonbane .movement-hud.dragonbane-movement-hud {
-//     background: url(../../../systems/dragonbane/art/ui/dialog-bg.webp) repeat;
+// .system-shadowdark .movement-hud.shadowdark-movement-hud {
+//     background: url(../../../systems/shadowdark/art/ui/dialog-bg.webp) repeat;
 //     background-position-x: center;
 //     font-family: QTFrizQuad;
 //     color: black;
 // }
 
-/* .system-dragonbane .movement-hud.dragonbane-movement-hud .movement-space.dragonbane-movement,.system-dragonbane .movement-hud.dragonbane-movement-hud .button-hud-button { */
-/*     background: url(../../../systems/dragonbane/art/ui/button-bg.webp); */
+/* .system-shadowdark .movement-hud.shadowdark-movement-hud .movement-space.shadowdark-movement,.system-shadowdark .movement-hud.shadowdark-movement-hud .button-hud-button { */
+/*     background: url(../../../systems/shadowdark/art/ui/button-bg.webp); */
 /*     background-repeat: repeat; */
 /*     background-size: contain; */
 /*     background-clip: border-box; */
@@ -142,12 +142,12 @@
 /*     font-weight: normal; */
 /* } */
 
-/* .system-dragonbane .movement-hud.dragonbane-movement-hud .movement-current { */
+/* .system-shadowdark .movement-hud.shadowdark-movement-hud .movement-current { */
 /*     color: green; */
 /* } */
 
-/* .system-dragonbane .ability-menu.dragonbane-ability-menu ul>li, .system-dragonbane .actions-container.dragonbane-actions-container::before, .systen-dragonbane .actions-container.dragonbane-actions-container .action-element.dragon-bane-action-element::before { */
-/*     background: url(../../../systems/dragonbane/art/ui/button-bg.webp); */
+/* .system-shadowdark .ability-menu.shadowdark-ability-menu ul>li, .system-shadowdark .actions-container.shadowdark-actions-container::before, .systen-shadowdark .actions-container.shadowdark-actions-container .action-element.dragon-bane-action-element::before { */
+/*     background: url(../../../systems/shadowdark/art/ui/button-bg.webp); */
 /*     background-repeat: repeat; */
 /*     background-size: contain; */
 /*     background-clip: border-box; */
@@ -156,21 +156,21 @@
 /*     font-weight: normal; */
 /* } */
 
-/* .extended-combat-hud .action-hud .action-element.dragonbane-action-element { */
+/* .extended-combat-hud .action-hud .action-element.shadowdark-action-element { */
 /*     font-family: QTFrizQuad; */
 /*     font-weight: normal; */
 /*     color: whitesmoke; */
 /*     font-size: 18px; */
-/*     /\* background: url(../../../systems/dragonbane/art/ui/dialog-bg.webp) repeat; *\/ */
+/*     /\* background: url(../../../systems/shadowdark/art/ui/dialog-bg.webp) repeat; *\/ */
 /*     /\* background-position-x: center; *\/ */
-/*     /\* background: url(../../../systems/dragonbane/art/ui/button-bg.webp); *\/ */
+/*     /\* background: url(../../../systems/shadowdark/art/ui/button-bg.webp); *\/ */
 /*     /\* background-repeat: repeat; *\/ */
 /*     /\* background-size: contain; *\/ */
 /*     /\* background-clip: border-box; *\/ */
 /* }     */
 
 /* /\* body > div.extended-combat-hud.fade-out-inactive-false > div.action-hud > div:nth-child(1) { *\/ */
-/* /\*         background: url(../../../systems/dragonbane/art/ui/button-bg.webp); *\/ */
+/* /\*         background: url(../../../systems/shadowdark/art/ui/button-bg.webp); *\/ */
 /* /\*     background-repeat: repeat; *\/ */
 /* /\*     background-size: contain; *\/ */
 /* /\*     background-clip: border-box; *\/ */

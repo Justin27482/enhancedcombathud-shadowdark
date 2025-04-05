@@ -1,11 +1,11 @@
 const ARGON = CONFIG.ARGON;
 
-export default class DragonbaneMovementHud extends ARGON.MovementHud {
+export default class shadowdarkMovementHud extends ARGON.MovementHud {
   get classes() {
     return [
       "movement-hud",
-      "dragonbane-movement-hud",
-      `dragonbane-${this.actor.type}`,
+      "shadowdark-movement-hud",
+      `shadowdark-${this.actor.type}`,
     ];
   }
 
@@ -18,6 +18,6 @@ export default class DragonbaneMovementHud extends ARGON.MovementHud {
   }
 
   get movementColor() {
-    return ["dragonbane-movement"];
+    return ["shadowdark-movement"];
   }
 }

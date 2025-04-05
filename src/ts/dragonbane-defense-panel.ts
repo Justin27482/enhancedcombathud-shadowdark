@@ -2,19 +2,19 @@ import { id as MODULE_NAME } from "../module.json";
 
 const ARGON = CONFIG.ARGON;
 
-class DragonbaneMonsterDefendButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkMonsterDefendButton extends ARGON.MAIN.BUTTONS.ActionButton {
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
 
   get label() {
     return game.i18n.localize(
-      "enhancedcombathud-dragonbane.actions.monster-defend",
+      "enhancedcombathud-shadowdark.actions.monster-defend",
     );
   }
 
   get icon() {
-    return "systems/dragonbane/art/ui/shield.webp";
+    return "systems/shadowdark/art/ui/shield.webp";
   }
 
   async _onLeftClick(event) {
@@ -25,12 +25,12 @@ class DragonbaneMonsterDefendButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 }
 
-class DragonbaneEvadeButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkEvadeButton extends ARGON.MAIN.BUTTONS.ActionButton {
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
   get label() {
-    return game.i18n.localize("enhancedcombathud-dragonbane.actions.dodge");
+    return game.i18n.localize("enhancedcombathud-shadowdark.actions.dodge");
   }
 
   get icon() {
@@ -38,14 +38,14 @@ class DragonbaneEvadeButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 
   async _onLeftClick() {
-    return game.dragonbane.rollItem(
+    return game.shadowdark.rollItem(
       (game.settings.get(MODULE_NAME, "skillNameEvade") as string) || "Evade",
       "skill",
     );
   }
 }
 
-function parrySortValue(item: DragonbaneItem): number {
+function parrySortValue(item: shadowdarkItem): number {
   return (
     item.system.skill.value +
     item.system.durability +
@@ -56,8 +56,8 @@ function parrySortValue(item: DragonbaneItem): number {
   );
 }
 
-class DragonbaneParryButton extends ARGON.MAIN.BUTTONS.ActionButton {
-  _parryWeapon: DragonbaneItem;
+class shadowdarkParryButton extends ARGON.MAIN.BUTTONS.ActionButton {
+  _parryWeapon: shadowdarkItem;
 
   constructor() {
     super();
@@ -70,10 +70,10 @@ class DragonbaneParryButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
   get label() {
-    return `${game.i18n.localize("enhancedcombathud-dragonbane.actions.parry")} (${this._parryWeapon?.name})`;
+    return `${game.i18n.localize("enhancedcombathud-shadowdark.actions.parry")} (${this._parryWeapon?.name})`;
   }
 
   get icon() {
@@ -91,17 +91,17 @@ class DragonbaneParryButton extends ARGON.MAIN.BUTTONS.ActionButton {
   async _onLeftClick() {
     // not sure if there is a way to default it to a parry
     // (doesn't seem to be one... yet)
-    game.dragonbane.rollItem(this._parryWeapon.name, this._parryWeapon.type);
+    game.shadowdark.rollItem(this._parryWeapon.name, this._parryWeapon.type);
   }
 }
 
-export default class DragonbaneDefensePanel extends ARGON.MAIN.ActionPanel {
+export default class shadowdarkDefensePanel extends ARGON.MAIN.ActionPanel {
   get classes() {
-    return ["actions-container", "dragonbane-actions-container"];
+    return ["actions-container", "shadowdark-actions-container"];
   }
 
   get label() {
-    return game.i18n.localize("enhancedcombathud-dragonbane.panels.defense");
+    return game.i18n.localize("enhancedcombathud-shadowdark.panels.defense");
   }
 
   get maxActions() {
@@ -110,9 +110,9 @@ export default class DragonbaneDefensePanel extends ARGON.MAIN.ActionPanel {
 
   async _getButtons() {
     if (this.actor.type === "monster") {
-      return [new DragonbaneMonsterDefendButton()];
+      return [new shadowdarkMonsterDefendButton()];
     }
-    return [new DragonbaneEvadeButton(), new DragonbaneParryButton()];
+    return [new shadowdarkEvadeButton(), new shadowdarkParryButton()];
   }
 
   get colorScheme() {

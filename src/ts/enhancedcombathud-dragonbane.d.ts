@@ -1,15 +1,15 @@
 /*
- * Creating a custom type for a Dragonbane game
- * since it adds some functions to `game.dragonbane`
+ * Creating a custom type for a shadowdark game
+ * since it adds some functions to `game.shadowdark`
  * that we're using
  */
 
-interface Dragonbane {
+interface shadowdark {
   // Not using any of the commented ones... yet
   // migrateWorld(): void;
   // updateSpells(): void;
   rollAttribute(
-    actor: DragonbaneActor,
+    actor: shadowdarkActor,
     attributeName: string,
     options?: object,
   ): void;
@@ -19,15 +19,15 @@ interface Dragonbane {
   // drawTreasureCards(): void;
 }
 
-interface DragonbaneGame extends Game {
-  dragonbane: Dragonbane;
+interface shadowdarkGame extends Game {
+  shadowdark: shadowdark;
 }
 
-declare let game: DragonbaneGame;
+declare let game: shadowdarkGame;
 
 // Also the global declarations for ARGON
 
-class DragonbaneActorSheet extends ActorSheet {
+class shadowdarkActorSheet extends ActorSheet {
   _onMonsterAttack(
     event: Pick<Event, "type" | "preventDefault" | "shiftKey" | "ctrlKey">,
   ): void;
@@ -46,27 +46,27 @@ class DragonbaneActorSheet extends ActorSheet {
   _onRestShift(event: Event): void;
 }
 
-class DragonbaneActor extends Actor {
-  sheet: DragonbaneActorSheet;
+class shadowdarkActor extends Actor {
+  sheet: shadowdarkActorSheet;
   system: any;
 
   isMonster: boolean;
   isCharacter: boolean;
   isNpc: boolean;
-  getEquippedWeapons(): Array<DragonbaneItem>;
+  getEquippedWeapons(): Array<shadowdarkItem>;
   hasSpells: boolean;
   getSkill(skillName: string): any;
 
   hasCondition(attribute: string): boolean;
   updateCondition(attribute: string, value: boolean): void;
 
-  useAbility(item: DragonbaneItem): void;
+  useAbility(item: shadowdarkItem): void;
 }
 
 class ArgonComponent {
   constructor(...args: any[]);
   // Definitely have
-  actor: DragonbaneActor;
+  actor: shadowdarkActor;
   name?: string;
 
   async _renderInner(): void;
@@ -74,14 +74,14 @@ class ArgonComponent {
   element: HTMLElement;
 }
 
-class DragonbaneItem extends Item {
+class shadowdarkItem extends Item {
   id: string;
   system: any;
   hasWeaponFeature(feature: string): boolean;
 }
 
 class ArgonItemComponent extends ArgonComponent {
-  item: DragonbaneItem;
+  item: shadowdarkItem;
   useTargetPicker: boolean;
 }
 
@@ -110,7 +110,7 @@ interface ArgonCONFIG extends CONFIG {
         ActionButton: ArgonComponentConstructor;
         ButtonPanelButton: ArgonPanelComponentConstructor;
         ItemButton: new (args: {
-          item: DragonbaneItem;
+          item: shadowdarkItem;
           id?: string;
         }) => ArgonItemComponent;
         SplitButton: new (

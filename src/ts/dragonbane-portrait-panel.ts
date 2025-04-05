@@ -1,9 +1,9 @@
 const ARGON = CONFIG.ARGON;
 
-export default class DragonbanePortraitPanel extends ARGON.PORTRAIT
+export default class shadowdarkPortraitPanel extends ARGON.PORTRAIT
   .PortraitPanel {
   get classes() {
-    return ["portrait-hud", "dragonbane-portrait-hud"];
+    return ["portrait-hud", "shadowdark-portrait-hud"];
   }
 
   get description() {
@@ -49,7 +49,7 @@ export default class DragonbanePortraitPanel extends ARGON.PORTRAIT
     const Blocks = [
       [
         {
-          text: game.i18n.localize("enhancedcombathud-dragonbane.portrait.hp"),
+          text: game.i18n.localize("enhancedcombathud-shadowdark.portrait.hp"),
         }, // game.i18n.localize('DoD.secondaryAttributeTypes.hitPoints') },
         { text: system.hitPoints.value },
         { text: "/" },
@@ -61,7 +61,7 @@ export default class DragonbanePortraitPanel extends ARGON.PORTRAIT
       // if they have any WP
       Blocks.push([
         {
-          text: game.i18n.localize("enhancedcombathud-dragonbane.portrait.wp"),
+          text: game.i18n.localize("enhancedcombathud-shadowdark.portrait.wp"),
         }, // game.i18n.localize('DoD.secondaryAttributeTypes.willPoints') },
         { text: system.willPoints.value },
         { text: "/" },

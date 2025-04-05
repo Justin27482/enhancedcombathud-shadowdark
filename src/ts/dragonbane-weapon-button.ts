@@ -1,6 +1,6 @@
 const ARGON = CONFIG.ARGON;
 
-export class DragonbaneWeaponButton extends ARGON.MAIN.BUTTONS.ItemButton {
+export class shadowdarkWeaponButton extends ARGON.MAIN.BUTTONS.ItemButton {
   get targets() {
     return 1;
   }
@@ -12,7 +12,7 @@ export class DragonbaneWeaponButton extends ARGON.MAIN.BUTTONS.ItemButton {
   }
 
   async _onLeftClick() {
-    game.dragonbane.rollItem(this.item.name, this.item.type);
+    game.shadowdark.rollItem(this.item.name, this.item.type);
   }
 
   get hasTooltip() {
@@ -27,25 +27,25 @@ export class DragonbaneWeaponButton extends ARGON.MAIN.BUTTONS.ItemButton {
       details: [
         {
           label: game.i18n.localize(
-            "enhancedcombathud-dragonbane.weapon.tooltips.damage",
+            "enhancedcombathud-shadowdark.weapon.tooltips.damage",
           ),
           value: this.item.system.damage,
         },
         {
           label: game.i18n.localize(
-            "enhancedcombathud-dragonbane.weapon.tooltips.durability",
+            "enhancedcombathud-shadowdark.weapon.tooltips.durability",
           ),
           value: this.item.system.durability,
         },
         {
           label: game.i18n.localize(
-            "enhancedcombathud-dragonbane.weapon.tooltips.range",
+            "enhancedcombathud-shadowdark.weapon.tooltips.range",
           ),
           value: this.item.system.calculatedRange,
         },
         {
           label: game.i18n.localize(
-            "enhancedcombathud-dragonbane.weapon.tooltips.features",
+            "enhancedcombathud-shadowdark.weapon.tooltips.features",
           ),
           value: this.item.system.features.join(", "),
         },

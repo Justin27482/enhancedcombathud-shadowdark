@@ -1,22 +1,22 @@
 import { id as MODULE_NAME } from "../module.json";
-import { DragonbaneWeaponButton } from "./dragonbane-weapon-button";
-import { DragonbaneSpellsButton } from "./dragonbane-spells-button";
+import { shadowdarkWeaponButton } from "./shadowdark-weapon-button";
+import { shadowdarkSpellsButton } from "./shadowdark-spells-button";
 
 const ARGON = CONFIG.ARGON;
 
-class DragonbaneMonsterAttackButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkMonsterAttackButton extends ARGON.MAIN.BUTTONS.ActionButton {
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
 
   get label() {
     return game.i18n.localize(
-      "enhancedcombathud-dragonbane.actions.monster-attack",
+      "enhancedcombathud-shadowdark.actions.monster-attack",
     );
   }
 
   get icon() {
-    return "systems/dragonbane/art/ui/sword.webp";
+    return "systems/shadowdark/art/ui/sword.webp";
   }
 
   async _onLeftClick(event) {
@@ -28,11 +28,11 @@ class DragonbaneMonsterAttackButton extends ARGON.MAIN.BUTTONS.ActionButton {
     });
   }
 }
-class DragonbaneHeroicAbilitiesButton extends ARGON.MAIN.BUTTONS
+class shadowdarkHeroicAbilitiesButton extends ARGON.MAIN.BUTTONS
   .ButtonPanelButton {
   get label() {
     return game.i18n.localize(
-      "enhancedcombathud-dragonbane.buttons.heroic-abilities",
+      "enhancedcombathud-shadowdark.buttons.heroic-abilities",
     );
   }
   get icon() {
@@ -44,20 +44,20 @@ class DragonbaneHeroicAbilitiesButton extends ARGON.MAIN.BUTTONS
       .filter((item) => item.type === "ability")
       .filter((item) => item.system.wp);
 
-    return new DragonbaneAbilityButtonPanel({
-      buttons: abilities.map((item) => new DragonbaneAbilityButton({ item })),
+    return new shadowdarkAbilityButtonPanel({
+      buttons: abilities.map((item) => new shadowdarkAbilityButton({ item })),
     });
   }
 }
 
-class DragonbaneAbilityButtonPanel extends ARGON.MAIN.BUTTON_PANELS
+class shadowdarkAbilityButtonPanel extends ARGON.MAIN.BUTTON_PANELS
   .ButtonPanel {
   get classes() {
-    return ["features-container", "dragonbane-features-container"];
+    return ["features-container", "shadowdark-features-container"];
   }
 }
 
-class DragonbaneAbilityButton extends ARGON.MAIN.BUTTONS.ItemButton {
+class shadowdarkAbilityButton extends ARGON.MAIN.BUTTONS.ItemButton {
   get classes() {
     return ["feature-element", "sheet-table-data"]; // need the latter to trick the DB code
   }
@@ -80,13 +80,13 @@ class DragonbaneAbilityButton extends ARGON.MAIN.BUTTONS.ItemButton {
     return {
       title: this.item.name,
       subtitle: game.i18n.localize(
-        "enhancedcombathud-dragonbane.tooltips.heroic-ability",
+        "enhancedcombathud-shadowdark.tooltips.heroic-ability",
       ),
       description: this.item.system.description,
       details: [
         {
           label: game.i18n.localize(
-            "enhancedcombathud-dragonbane.tooltips.wp-cost",
+            "enhancedcombathud-shadowdark.tooltips.wp-cost",
           ),
           value: this.item.system.wp,
         },
@@ -104,9 +104,9 @@ class DragonbaneAbilityButton extends ARGON.MAIN.BUTTONS.ItemButton {
   }
 }
 
-class DragonbaneRoundRestButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkRoundRestButton extends ARGON.MAIN.BUTTONS.ActionButton {
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
 
   get icon() {
@@ -114,7 +114,7 @@ class DragonbaneRoundRestButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
   get label() {
     return game.i18n.localize(
-      "enhancedcombathud-dragonbane.buttons.round-rest",
+      "enhancedcombathud-shadowdark.buttons.round-rest",
     );
   }
 
@@ -123,7 +123,7 @@ class DragonbaneRoundRestButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 }
 
-// class DragonbaneDashButton extends ARGON.MAIN.BUTTONS.ActionButton {
+// class shadowdarkDashButton extends ARGON.MAIN.BUTTONS.ActionButton {
 //   get icon() {
 //     return "modules/enhancedcombathud/icons/svg/run.svg";
 //   }
@@ -132,7 +132,7 @@ class DragonbaneRoundRestButton extends ARGON.MAIN.BUTTONS.ActionButton {
 //   }
 // }
 
-class DragonbaneSkillButton extends ARGON.MAIN.BUTTONS.ActionButton {
+class shadowdarkSkillButton extends ARGON.MAIN.BUTTONS.ActionButton {
   _icon: string;
   _label: string;
   skillName: string;
@@ -145,7 +145,7 @@ class DragonbaneSkillButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 
   get classes() {
-    return ["action-element", "dragonbane-action-element"];
+    return ["action-element", "shadowdark-action-element"];
   }
 
   get icon() {
@@ -158,7 +158,7 @@ class DragonbaneSkillButton extends ARGON.MAIN.BUTTONS.ActionButton {
   async _onLeftClick() {
     // use the configured skill name
     // or fallback if somehow it's not set to anything
-    game.dragonbane.rollItem(
+    game.shadowdark.rollItem(
       (game.settings.get(MODULE_NAME, `skillName${this.skillName}`) as
         | string
         | null
@@ -168,13 +168,13 @@ class DragonbaneSkillButton extends ARGON.MAIN.BUTTONS.ActionButton {
   }
 }
 
-export default class DragonbaneActionsPanel extends ARGON.MAIN.ActionPanel {
+export default class shadowdarkActionsPanel extends ARGON.MAIN.ActionPanel {
   get classes() {
-    return ["actions-container", "dragonbane-actions-container"];
+    return ["actions-container", "shadowdark-actions-container"];
   }
 
   get label() {
-    return game.i18n.localize("enhancedcombathud-dragonbane.panels.actions");
+    return game.i18n.localize("enhancedcombathud-shadowdark.panels.actions");
   }
 
   get currentActions() {
@@ -195,7 +195,7 @@ export default class DragonbaneActionsPanel extends ARGON.MAIN.ActionPanel {
         .getEquippedWeapons()
         .forEach((item) =>
           Buttons.push(
-            new DragonbaneWeaponButton({ item, inActionPanel: true }),
+            new shadowdarkWeaponButton({ item, inActionPanel: true }),
           ),
         );
       if (this.actor.hasSpells) {
@@ -207,36 +207,36 @@ export default class DragonbaneActionsPanel extends ARGON.MAIN.ActionPanel {
           .filter((i) => i.type == "spell")
           .filter((s) => s.system.memorized || includeUnpreparedSpells);
 
-        Buttons.push(new DragonbaneSpellsButton(spells));
+        Buttons.push(new shadowdarkSpellsButton(spells));
       }
       Buttons.push(
-        // new DragonbaneDashButton(), // not really implemented yet. Just double movement for a round?
+        // new shadowdarkDashButton(), // not really implemented yet. Just double movement for a round?
         new ARGON.MAIN.BUTTONS.SplitButton(
-          new DragonbaneSkillButton({
+          new shadowdarkSkillButton({
             skillName: "Healing",
             label: game.i18n.localize(
-              "enhancedcombathud-dragonbane.actions.first-aid",
+              "enhancedcombathud-shadowdark.actions.first-aid",
             ),
             iconName: "bandage-roll.svg",
           }),
-          new DragonbaneSkillButton({
+          new shadowdarkSkillButton({
             skillName: "Persuasion",
             label: game.i18n.localize(
-              "enhancedcombathud-dragonbane.actions.rally",
+              "enhancedcombathud-shadowdark.actions.rally",
             ),
             iconName: "bugle-call.svg",
           }),
         ),
       );
     } else {
-      Buttons.push(new DragonbaneMonsterAttackButton());
+      Buttons.push(new shadowdarkMonsterAttackButton());
     }
 
     // Do they have willpower points to spend/gain?
     if (this.actor.system.willPoints?.max) {
       Buttons.push(
-        new DragonbaneHeroicAbilitiesButton(),
-        new DragonbaneRoundRestButton(),
+        new shadowdarkHeroicAbilitiesButton(),
+        new shadowdarkRoundRestButton(),
       );
     }
 
